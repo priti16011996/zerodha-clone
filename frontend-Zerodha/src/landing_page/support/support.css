@@ -1,0 +1,17 @@
+.support-portal {
+  background-color: #3578c7; /* close to screenshot blue */
+}
+
+.support-link {
+  color: #dbe9ff;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.support-link:hover {
+  color: #ffffff;
+}
+
+.support-portal input::placeholder {
+  color: #999;
+}
