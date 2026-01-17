@@ -4,9 +4,7 @@ const OrderSchema = new Schema({
     name: String,
     qty: Number,
     price: Number,
-    net: String,
-    day: String,
-    isLoss: Boolean,
+    mode: String,
 })
 
 module.exports = HoldingsSchema;

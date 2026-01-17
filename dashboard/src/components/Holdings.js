@@ -1,13 +1,26 @@
-import React from "react";
-import {holdings} from  "../data/data";
+import React ,{useState,useEffect} from "react";
+import axios from "axios";
+ // import {holdings} from  "../data/data"; // Importing from data file for static data
 
 const Holdings = () => {
+  const [holdings,setHoldings] = useState([]);
+  useEffect(()=>{
+    const fetchHoldings = async()=>{
+      axios.get("http://localhost:3002/allHoldingsData").then((res)=>{
+        console.log(res.data);
+        setHoldings(res.data);
+      });
+    }
+    fetchHoldings();
+  },[])
+
   return (
     <>
       <h3 className="title">Holdings ({holdings.length})</h3>
 
       <div className="order-table">
         <table>
+          <tbody>
           <tr>
             <th>Instrument</th>
             <th>Qty.</th>
@@ -36,6 +49,7 @@ const Holdings = () => {
           </tr>
             )
           })}
+          </tbody>
         </table>
       </div>
 

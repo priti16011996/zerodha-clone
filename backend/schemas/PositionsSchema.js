@@ -1,5 +1,5 @@
-const {schemas} = require('mongoose');
-const PositionsSchema = new schemas({
+const {Schemas} = require('mongoose');
+const PositionsSchema = new Schemas({
         product: String,
         name: String,
         qty: Number,
